@@ -9,7 +9,7 @@ The spaces given at Degistir method may differ from file to file so check the de
 
 Usage: 
 
-  ClassToDataContract.exe fileToBeConverted.cs destinationFile.cs
+```ClassToDataContract.exe fileToBeConverted.cs destinationFile.cs```
 
 If you don't specify a destination file the converted one will be saved as final.cs.
 
