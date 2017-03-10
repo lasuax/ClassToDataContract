@@ -11,8 +11,9 @@ namespace ClassToDataContract
     {
         static void Main(string[] args)
         {
+            if (args.Length == 0) { Console.WriteLine("No files specified."); return;} 
             var metin = args[0];
-            var hedef = args[1];
+            var hedef = args.Length == 2 ? args[1] : "final.cs";
             var deneme = DosyadanOku(metin);
             var liste = Parcala(deneme);
             var siniflar = liste as IList<string> ?? liste.ToList();
@@ -26,7 +27,7 @@ namespace ClassToDataContract
 
         private static void Bitir(string final, string yol)
         {
-            using (var yazici = new StreamWriter(yol ?? "final.cs"))
+            using (var yazici = new StreamWriter(yol))
             {
                 yazici.Write(final);
             }
